@@ -1,7 +1,14 @@
+$white : #ffffff;
+$black : #303841;
+$gray  : #777777;
+$yellow: #f6c90e;
+
+
 .App {
 
-    background-color: #f6c90e;
+    background-color: $yellow;
     font-family     : Rubik, sans-serif;
+    color           : $black;
 
     width   : 100vw;
     padding : 25px 0;
@@ -22,7 +29,7 @@
             width           : 360px;
             height          : 600px;
             padding         : 0 28px;
-            background-color: white;
+            background-color: $white;
             box-sizing      : border-box;
             border-radius   : 30px;
 

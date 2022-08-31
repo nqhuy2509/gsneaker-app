@@ -1,3 +1,8 @@
+$white : #ffffff;
+$black : #303841;
+$gray  : #777777;
+$yellow: #f6c90e;
+
 .title {
     font-size  : 24px;
     font-weight: 700;
@@ -41,7 +46,7 @@
 
         p {
             font-size    : 13px;
-            color        : #777;
+            color        : $gray;
             line-height  : 1.8;
             margin-bottom: 20px;
             font-weight  : 300;
@@ -61,7 +66,7 @@
                 box-sizing      : border-box;
                 height          : 46px;
                 width           : auto;
-                background-color: #f6c90e;
+                background-color: $yellow;
                 display         : flex;
                 align-items     : center;
                 justify-content : center;
@@ -85,7 +90,7 @@
             .checked {
                 width           : 46px;
                 height          : 46px;
-                background-color: #f6c90e;
+                background-color: $yellow;
                 display         : flex;
                 align-items     : center;
                 justify-content : center;

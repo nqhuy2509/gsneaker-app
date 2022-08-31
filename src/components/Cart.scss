@@ -1,3 +1,8 @@
+$white : #ffffff;
+$black : #303841;
+$gray  : #777777;
+$yellow: #f6c90e;
+
 .heading {
     display        : flex;
     justify-content: space-between;
@@ -102,7 +107,7 @@
                     display         : flex;
                     justify-content : center;
                     align-items     : center;
-                    background-color: #f6c90e;
+                    background-color: $yellow;
                     border-radius   : 100%;
                     cursor          : pointer;
 
