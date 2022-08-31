@@ -31,7 +31,30 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.state.listProduct.forEach((item) => (item.isAdded = false));
+		let cartListStore = localStorage.getItem('cartList');
+		cartListStore = JSON.parse(cartListStore);
+
+		if (cartListStore) {
+			let totalPrice = calculateCart(cartListStore);
+
+			this.setState({
+				listCart: cartListStore,
+				totalPrice,
+			});
+			// console.log(cartListStore);
+			this.state.listProduct.forEach((item) => {
+				let isExist = cartListStore.find(
+					(element) => element.id === item.id
+				);
+				if (isExist) {
+					item.isAdded = true;
+				} else {
+					item.isAdded = false;
+				}
+			});
+		} else {
+			this.state.listProduct.forEach((item) => (item.isAdded = false));
+		}
 	}
 
 	componentDidUpdate(preProps, preState, snapshot) {}
@@ -48,8 +71,7 @@ class App extends Component {
 
 		curListCart = [...curListCart, product];
 		let totalPrice = calculateCart(curListCart);
-
-		localStorage.setItem('cartList', curListCart);
+		localStorage.setItem('cartList', JSON.stringify(curListCart));
 
 		this.setState({
 			listCart: curListCart,
@@ -68,6 +90,7 @@ class App extends Component {
 			});
 
 			let totalPrice = calculateCart(curListCart);
+			localStorage.setItem('cartList', JSON.stringify(curListCart));
 
 			this.setState({
 				listCart: curListCart,
@@ -95,6 +118,7 @@ class App extends Component {
 				}
 			});
 			let totalPrice = calculateCart(curListCart);
+			localStorage.setItem('cartList', JSON.stringify(curListCart));
 
 			this.setState({
 				listCart: curListCart,
@@ -113,6 +137,7 @@ class App extends Component {
 			if (item.id === product.id) item.isAdded = false;
 		});
 		let totalPrice = calculateCart(curListCart);
+		localStorage.setItem('cartList', JSON.stringify(curListCart));
 
 		this.setState({
 			listCart: curListCart,
