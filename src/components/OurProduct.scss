@@ -1,0 +1,102 @@
+.title {
+    font-size  : 24px;
+    font-weight: 700;
+    margin     : 16px 0;
+}
+
+.product-container {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    position  : relative;
+    overflow-y: scroll;
+    height    : calc(100% - 98px);
+
+    .product-item {
+        &:first-child {
+            padding-top: 0;
+        }
+
+        padding: 40px 0;
+
+        .image {
+            border-radius: 30px;
+            height       : 380px;
+            display      : flex;
+            align-items  : center;
+
+            img {
+                width      : 100%;
+                transform  : rotate(-30deg);
+                margin-left: -16px;
+            }
+        }
+
+        h3 {
+            font-size  : 20px;
+            font-weight: 700;
+            margin     : 25px 0;
+        }
+
+        p {
+            font-size    : 13px;
+            color        : #777;
+            line-height  : 1.8;
+            margin-bottom: 20px;
+            font-weight  : 300;
+        }
+
+        .item-bottom {
+            display        : flex;
+            justify-content: space-between;
+            align-items    : center;
+
+            .price {
+                font-size  : 18px;
+                font-weight: 700;
+            }
+
+            .add-btn {
+                box-sizing      : border-box;
+                height          : 46px;
+                width           : auto;
+                background-color: #f6c90e;
+                display         : flex;
+                align-items     : center;
+                justify-content : center;
+                border-radius   : 100px;
+                padding         : 16px 20px;
+                font-size       : 14px;
+                font-weight     : 700;
+                text-transform  : uppercase;
+                cursor          : pointer;
+                transition      : all .25s ease;
+
+                border : none;
+                outline: none;
+
+                &:hover {
+                    background-color: #f8d43f;
+                    box-shadow      : -2px 2px 4px rgba(0, 0, 0, .15);
+                }
+            }
+
+            .checked {
+                width           : 46px;
+                height          : 46px;
+                background-color: #f6c90e;
+                display         : flex;
+                align-items     : center;
+                justify-content : center;
+                border-radius   : 50%;
+                box-sizing      : border-box;
+                pointer-events  : none;
+
+                img {
+                    width: 16px;
+                }
+            }
+        }
+    }
+}

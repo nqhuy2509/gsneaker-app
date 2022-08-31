@@ -1,0 +1,46 @@
+.App {
+
+    background-color: #f6c90e;
+    font-family     : Rubik, sans-serif;
+
+    width   : 100vw;
+    padding : 25px 0;
+    overflow: hidden;
+
+    .container {
+        height         : 100vh;
+        margin         : 0 auto;
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+        align-items    : center;
+        gap            : 15px;
+
+        max-width: 760px;
+
+        .card {
+            width           : 360px;
+            height          : 600px;
+            padding         : 0 28px;
+            background-color: white;
+            box-sizing      : border-box;
+            border-radius   : 30px;
+
+
+            .logo {
+                margin-top: 12px;
+
+                img {
+                    width  : 50px;
+                    display: block;
+                }
+            }
+
+            .card-content {
+                width : 100%;
+                height: 100%;
+            }
+
+        }
+    }
+}
